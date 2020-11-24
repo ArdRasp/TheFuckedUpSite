@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                font-family: 'Roboto';
+            }
+
+            h1 {
+                padding-top: 20px;
+            }
+
+            body {
+                height: 100vh;
+                position: relative;
+                text-align: center;
+            }
+
+            form {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            div {margin-top: 50px;}
+
+            .div_first_name {margin: 0;}
+
+            .span_first_name {text-decoration: underline;}
+            .span_last_name {text-decoration: underline;}
+            .span_email {text-decoration: underline;}
+            .span_phone_number {text-decoration: underline;}
+            .span_country {text-decoration: underline;}
+
+            button {
+                display: block;
+                margin: auto;
+                margin-top: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Who the fuck are you ?</h1>
+        <form>
+            <div class="div_first_name">
+                <span>First Name : </span>
+                <span class="span_first_name">Replace That First Name</span>
+                <button>It's Not You ?</button>
+            </div>
+            <div>
+                <span>Last Name : </span>
+                <span class="span_last_name">Replace That Last Name</span>
+                <button>It's Not You ?</button>
+            </div>
+            <div>
+                <span>e-mail : </span>
+                <span class="span_email">Replace That email</span>
+                <button>It's Not Yours ?</button>
+            </div>
+            <div>
+                <span>Gender : </span>
+                <select>
+                    <option>Male</option>
+                    <option>Female</option>
+                    <option>Coffe Table</option>
+                    <option>Amine</option>
+                    <option>Gas</option>
+                    <option>Liquid</option>
+                    <option>Solid</option>
+                    <option>Plasma</option>
+                    <option>I have no idea what TF you are</option>
+                </select>
+                <div>
+                    <span>Phone Number : </span>
+                    <span class="span_phone_number">Replace That Phone Number</span>
+                    <button>It's Not Yours ?</button>
+                </div>
+                <div>
+                    <span>Country : </span>
+                    <span class="span_country">Replace That Country</span>
+                    <button>It's Not Yours ?</button>
+                </div>
+            </div>
+        </form>
+    </body>
+</html>
