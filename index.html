@@ -32,61 +32,100 @@
 
             .div_first_name {margin: 0;}
 
-            .span_first_name {text-decoration: underline;}
-            .span_last_name {text-decoration: underline;}
-            .span_email {text-decoration: underline;}
-            .span_phone_number {text-decoration: underline;}
-            .span_country {text-decoration: underline;}
+            #id_first_name {text-decoration: underline;}
+            #id_last_name {text-decoration: underline;}
+            #id_email {text-decoration: underline;}
+            #id_phone_number {text-decoration: underline;}
+            #id_country {text-decoration: underline;}
 
             button {
                 display: block;
                 margin: auto;
                 margin-top: 5px;
             }
+
+            .export_btn {
+                margin-top: 50px;
+                width: 50%;
+                height: 50px;
+            }
         </style>
     </head>
     <body>
         <h1>Who the fuck are you ?</h1>
         <form>
-            <div class="div_first_name">
+            <div class="class_first_name">
                 <span>First Name : </span>
-                <span class="span_first_name">Replace That First Name</span>
+                <span id="id_first_name">Replace That First Name</span>
                 <button>It's Not You ?</button>
             </div>
             <div>
                 <span>Last Name : </span>
-                <span class="span_last_name">Replace That Last Name</span>
+                <span id="id_last_name">Replace That Last Name</span>
                 <button>It's Not You ?</button>
             </div>
             <div>
                 <span>e-mail : </span>
-                <span class="span_email">Replace That email</span>
+                <span id="id_email">Replace That email</span>
                 <button>It's Not Yours ?</button>
             </div>
             <div>
                 <span>Gender : </span>
-                <select>
-                    <option>Male</option>
-                    <option>Female</option>
-                    <option>Coffe Table</option>
-                    <option>Amine</option>
-                    <option>Gas</option>
-                    <option>Liquid</option>
-                    <option>Solid</option>
-                    <option>Plasma</option>
-                    <option>I have no idea what TF you are</option>
+                <select id="select_gender">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Coffe Table">Coffe Table</option>
+                    <option value="Amine">Amine</option>
+                    <option value="Gas">Gas</option>
+                    <option value="Liquid">Liquid</option>
+                    <option value="Solid">Solid</option>
+                    <option value="Plasma">Plasma</option>
+                    <option value="I have no idea what TF you are">I have no idea what TF you are</option>
                 </select>
-                <div>
-                    <span>Phone Number : </span>
-                    <span class="span_phone_number">Replace That Phone Number</span>
-                    <button>It's Not Yours ?</button>
-                </div>
-                <div>
-                    <span>Country : </span>
-                    <span class="span_country">Replace That Country</span>
-                    <button>It's Not Yours ?</button>
-                </div>
             </div>
+            <div>
+                <span>Phone Number : </span>
+                <span id="id_phone_number">Replace That Phone Number</span>
+                <button>It's Not Yours ?</button>
+            </div>
+            <div>
+                <span>Country : </span>
+                <span id="id_country">Replace That Country</span>
+                <button>It's Not Yours ?</button>
+            </div>
+            <button class="export_btn" type="button" onclick="export_data()">I FOUND MYSELF</button>
         </form>
+        <script>
+            let export_data = () =>{
+                first_name = document.getElementById('id_first_name').innerText;
+                const last_name = document.getElementById("id_last_name").innerText;
+                const email = document.getElementById("id_email").innerText;
+                const gender = document.getElementById("select_gender").value;
+                const phone_number = document.getElementById("id_phone_number").innerText;
+                const country = document.getElementById("id_country").innerText;
+
+                let form = 
+                'First Name: ' + first_name + '\n' +
+                'Last Name: ' + last_name + '\n' + 
+                'E-mail: ' + email + '\n' + 
+                'Gender: ' + gender + '\n' + 
+                'Phone Number: ' + phone_number + '\n' + 
+                'Country: ' + country;
+
+                const text_to_blob = new Blob([form], {type: 'text/plain'});
+                let dl_link = document.createElement("a");
+                dl_link.download = "I can now remember my name.txt";
+
+                if (window.webkitURL != null)
+                    dl_link.href = window.webkitURL.createObjectURL(text_to_blob);
+                else
+                {
+                    dl_link = window.URL.createObjectURL(text_to_blob);
+                    dl_link.style.display = "none";
+                    document.body.appendChild(dl_link);
+                }
+                dl_link.click();
+            }
+        </script>
     </body>
 </html>
