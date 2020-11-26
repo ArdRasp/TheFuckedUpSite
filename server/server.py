@@ -1,7 +1,7 @@
 #!/bin/python3.9
 import http.server
  
-PORT = 8000
+PORT = 8888
 server_address = ("", PORT)
 
 server = http.server.HTTPServer
