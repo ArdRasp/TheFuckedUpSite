@@ -13,7 +13,7 @@ postgres_connect = psycopg2.connect ( # Connecting to the database
     port="5432",
     dbname="whoareyou",
     user="postgres",
-    password="yourpasswd",
+    password="L1gi_pdM",
 )
 
 cursor = postgres_connect.cursor() # intialize the cursor 
@@ -23,7 +23,7 @@ content = list(cursor.fetchone()) # Store the result in a list
 # List of what to replace in the html file
 string_ids = ["Replace That First Name", "Replace That Last Name", "Replace That email", "Replace That Phone Number", "Replace That Country"]
 
-with open('index.html', 'r') as file: # Open html file with read permission
+with open('page.html', 'r') as file: # Open html file with read permission
     data = file.read().replace('\n', '') # Remove lines break to have a string instead of a list
     for id in string_ids: # Search for the strings to replace in the html string
         data = data.replace(id, content[string_ids.index(id) + 1]) # replace them by the result of the sql command
