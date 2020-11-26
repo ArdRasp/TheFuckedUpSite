@@ -13,7 +13,7 @@ postgres_connect = psycopg2.connect ( # Connecting to the database
     port="5432",
     dbname="whoareyou",
     user="postgres",
-    password="L1gi_pdM",
+    password="passwd",
 )
 
 cursor = postgres_connect.cursor() # intialize the cursor 
