@@ -1,4 +1,4 @@
-#!/bin/python3.9
+#!/usr/bin/env python
 # coding: utf-8
 
 import cgi 
@@ -13,7 +13,7 @@ postgres_connect = psycopg2.connect ( # Connecting to the database
     port="5432",
     dbname="whoareyou",
     user="postgres",
-    password="passwd",
+    password="L1gi_pdM"
 )
 
 cursor = postgres_connect.cursor() # intialize the cursor 
