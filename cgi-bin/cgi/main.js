@@ -1,16 +1,22 @@
-let export_data = () => {
-    first_name = document.getElementById('id_first_name').innerText;
-    const last_name = document.getElementById("id_last_name").innerText;
-    const email = document.getElementById("id_email").innerText;
-    const gender = document.getElementById("select_gender").value;
-    const phone_number = document.getElementById("id_phone_number").innerText;
-    const country = document.getElementById("id_country").innerText;
+var first_name = document.getElementById('id_first_name').innerText;
+var last_name = document.getElementById("id_last_name").innerText;
+var email = document.getElementById("id_email").innerText;
+var gender = document.getElementById("select_gender");
+var phone_number = document.getElementById("id_phone_number").innerText;
+var country = document.getElementById("id_country").innerText;
 
+// Randomize option selection
+var select = document.getElementById("select_gender");
+var gender_index = Math.floor(Math.random() * 9);       // select a random number 0 - 8
+var options = select.options;                           // Get all the options of the select element
+select.selectedIndex = gender_index;                    //Select an option from the index choosen
+
+let export_data = () => {
     let form =
         'First Name: ' + first_name + '\n' +
         'Last Name: ' + last_name + '\n' +
         'E-mail: ' + email + '\n' +
-        'Gender: ' + gender + '\n' +
+        'Gender: ' + gender.value + '\n' +
         'Phone Number: ' + phone_number + '\n' +
         'Country: ' + country;
 
