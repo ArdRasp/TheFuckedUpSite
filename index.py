@@ -2,22 +2,16 @@
 # coding: utf-8
 
 import cgi 
-import psycopg2
 import random
+import sqlite3
 
 form = cgi.FieldStorage()
 print("Content-type: text/html; charset=utf-8\n")
 
-postgres_connect = psycopg2.connect ( # Connecting to the database
-    host="localhost",
-    port="5432",
-    dbname="whoareyou",
-    user="postgres",
-    password="L1gi_pdM"
-)
+sqlite_connection = sqlite3.connect("./database/whoareyou.db")
 
-cursor = postgres_connect.cursor() # intialize the cursor 
-cursor.execute(f'SELECT * FROM data OFFSET {random.randint(0, 1000)} LIMIT 1') # get the n row from the database
+cursor = sqlite_connection.cursor()
+cursor.execute('SELECT * FROM data LIMIT 1 OFFSET ' + str(random.randint(0, 1000)) + ';') # get the n row from the database
 content = list(cursor.fetchone()) # Store the result in a list
 
 # List of what to replace in the html file
