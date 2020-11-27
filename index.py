@@ -11,7 +11,7 @@ print("Content-type: text/html; charset=utf-8\n")
 sqlite_connection = sqlite3.connect("./database/whoareyou.db")
 
 cursor = sqlite_connection.cursor()
-cursor.execute('SELECT * FROM data LIMIT 1 OFFSET ' + str(random.randint(0, 1000)) + ';') # get the n row from the database
+cursor.execute('SELECT * FROM data ORDER BY id LIMIT 1 OFFSET ' + str(random.randint(0, 1000)) + ';') # get the n row from the database
 content = list(cursor.fetchone()) # Store the result in a list
 
 # List of what to replace in the html file
