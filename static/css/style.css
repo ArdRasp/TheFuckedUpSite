@@ -60,3 +60,21 @@ button {
     width: 50%;
     height: 50px;
 }
+
+@media only screen and (max-height: 700px)
+{
+    form {
+        display: block;
+        margin-top: 150px;
+        padding-bottom: 100px;
+    }
+}
+
+@media only screen and (max-height: 600px)
+{
+    form {
+        display: block;
+        margin-top: 175px;
+        padding-bottom: 50px;
+    }
+}
